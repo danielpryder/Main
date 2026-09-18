@@ -90,6 +90,42 @@ session redirect and scrapes tee times out of the HTML.
 that could be confirmed, so the app shows the booking link and the course's booking rules.
 Adding an adapter later only requires a new class in `src/providers/` and a config entry.
 
+## Publishing it as a live web page
+
+The app has to run as a Node server (it calls the booking sites on your behalf), so it needs a
+host that runs containers rather than static pages. The repo ships a `Dockerfile` and a
+`render.yaml`, which makes Render's free tier a one-click deploy:
+
+1. Sign in at https://render.com with your GitHub account and let it see this repository.
+2. Click **New > Blueprint**, pick this repo and branch, and accept the `render.yaml` it finds.
+3. Render builds the Docker image and gives you a URL like `https://vancouver-tee-times.onrender.com`.
+   Every push to the branch redeploys automatically.
+
+The same `Dockerfile` works unchanged on Railway (`New Project > Deploy from GitHub`),
+Fly.io (`fly launch`), or any VPS with Docker:
+
+```bash
+docker build -t tee-times .
+docker run -p 3000:3000 tee-times
+```
+
+Things to know about hosting it:
+
+- **Free tiers sleep.** Render's free service spins down after 15 idle minutes and takes
+  about 30 seconds to wake on the first visit. The paid tier (or Railway/Fly) stays warm.
+- **Cloud IPs get blocked more than home IPs.** The CPS sites (Northlands, Morgan Creek) sit
+  behind Cloudflare, which is stricter with datacenter addresses. If a course shows
+  "couldn't fetch" only when hosted, run it at home instead: a Raspberry Pi or an always-on
+  laptop plus a free Cloudflare Tunnel or Tailscale Funnel gives you a public URL from your
+  own IP.
+- **It is public.** Anything at that URL can be used by anyone who finds it, and each check
+  hits the courses' booking sites. Keep the cache on (it is by default), and if you want to
+  keep it to yourself, put it behind your host's access control (Render and Cloudflare both
+  offer this) rather than leaving it open.
+- `config/courses.local.json` (discovered ids, CPS api keys) is git-ignored, so a hosted
+  deploy will not have it. Either pin those values in `config/courses.json` before pushing,
+  or rely on runtime discovery, which works without the file.
+
 ## Configuration
 
 `config/courses.json` is tracked. Put machine-specific overrides (discovered ids, api keys) in

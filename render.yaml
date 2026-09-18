@@ -1,0 +1,13 @@
+# Render Blueprint: https://render.com/docs/blueprint-spec
+# Deploy with "New > Blueprint" in the Render dashboard, pointing at this repo.
+services:
+  - type: web
+    name: vancouver-tee-times
+    runtime: docker
+    plan: free
+    healthCheckPath: /api/health
+    envVars:
+      - key: CACHE_TTL_SECONDS
+        value: "120"
+      - key: PROVIDER_TIMEOUT_MS
+        value: "15000"
