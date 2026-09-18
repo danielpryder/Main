@@ -1,0 +1,5 @@
+[
+  {"start_time":"08:30","date":"2026-09-26","out_of_capacity":false,"restrictions":[],"green_fees":[{"green_fee":120.0},{"green_fee":120.0}]},
+  {"start_time":"08:40","date":"2026-09-26","out_of_capacity":true,"restrictions":[],"green_fees":[]},
+  {"start_time":"09:20","date":"2026-09-26","out_of_capacity":false,"restrictions":[],"green_fees":[{"green_fee":110.0},{"green_fee":110.0}]}
+]

@@ -1,0 +1,8 @@
+[
+  {"id":"a1b2c3d4-0000-4000-8000-000000000001","start_time":"2026-09-26T08:20:00-07:00","course_id":"7c9e6679-7425-40de-944b-e07fc1f90ae7","holes":18,"free_slots":4,"out_of_capacity":false,"restrictions":[],"green_fees":[{"green_fee":89.0},{"green_fee":89.0}]},
+  {"id":"a1b2c3d4-0000-4000-8000-000000000002","start_time":"2026-09-26T08:30:00-07:00","course_id":"7c9e6679-7425-40de-944b-e07fc1f90ae7","holes":18,"free_slots":1,"out_of_capacity":false,"restrictions":[],"green_fees":[{"green_fee":89.0}]},
+  {"id":"a1b2c3d4-0000-4000-8000-000000000003","start_time":"2026-09-26T09:00:00-07:00","course_id":"7c9e6679-7425-40de-944b-e07fc1f90ae7","holes":18,"free_slots":2,"out_of_capacity":true,"restrictions":[],"green_fees":[]},
+  {"id":"a1b2c3d4-0000-4000-8000-000000000004","start_time":"2026-09-26T09:10:00-07:00","course_id":"7c9e6679-7425-40de-944b-e07fc1f90ae7","holes":18,"free_slots":3,"out_of_capacity":false,"restrictions":["Members only"],"green_fees":[]},
+  {"id":"a1b2c3d4-0000-4000-8000-000000000005","start_time":"2026-09-26T10:40:00-07:00","course_id":"7c9e6679-7425-40de-944b-e07fc1f90ae7","holes":18,"free_slots":4,"out_of_capacity":false,"restrictions":[],"green_fees":[{"green_fee":75.0}]},
+  {"id":"a1b2c3d4-0000-4000-8000-000000000006","start_time":"2026-09-27T07:00:00-07:00","course_id":"7c9e6679-7425-40de-944b-e07fc1f90ae7","holes":18,"free_slots":4,"out_of_capacity":false,"restrictions":[],"green_fees":[{"green_fee":75.0}]}
+]

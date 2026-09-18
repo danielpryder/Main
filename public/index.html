@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vancouver Tee Times</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%2714%27 fill=%27%231f7a3a%27/%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%276%27 fill=%27%23fff%27/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="top">
+    <h1>Vancouver Tee Times</h1>
+    <p class="sub">Pick a day, a time and how many are playing. We check the booking sites for eight Metro Vancouver courses.</p>
+  </header>
+
+  <main class="layout">
+    <section class="panel controls" aria-label="Search">
+      <div class="calendar" id="calendar">
+        <div class="cal-head">
+          <button type="button" class="nav" id="prevMonth" aria-label="Previous month">&#8249;</button>
+          <div class="cal-title" id="calTitle"></div>
+          <button type="button" class="nav" id="nextMonth" aria-label="Next month">&#8250;</button>
+        </div>
+        <div class="cal-grid cal-weekdays">
+          <span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
+        </div>
+        <div class="cal-grid" id="calDays" role="grid"></div>
+      </div>
+
+      <div class="field">
+        <label for="time">Tee time</label>
+        <div class="row">
+          <input type="time" id="time" value="09:00" step="600" />
+          <label class="inline"><input type="checkbox" id="anyTime" /> any time</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Window</label>
+        <div class="seg" id="window" role="radiogroup">
+          <button type="button" data-v="30">&plusmn;30m</button>
+          <button type="button" data-v="60">&plusmn;1h</button>
+          <button type="button" data-v="90" class="on">&plusmn;1.5h</button>
+          <button type="button" data-v="180">&plusmn;3h</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Golfers</label>
+        <div class="seg" id="players" role="radiogroup">
+          <button type="button" data-v="1">1</button>
+          <button type="button" data-v="2" class="on">2</button>
+          <button type="button" data-v="3">3</button>
+          <button type="button" data-v="4">4</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Holes</label>
+        <div class="seg" id="holes" role="radiogroup">
+          <button type="button" data-v="18" class="on">18</button>
+          <button type="button" data-v="9">9</button>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Courses</label>
+        <div class="courses" id="courseList"></div>
+      </div>
+
+      <button type="button" class="primary" id="go">Check availability</button>
+      <p class="hint" id="hint"></p>
+    </section>
+
+    <section class="results" id="results" aria-live="polite">
+      <div class="empty">Choose a date and press <strong>Check availability</strong>.</div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    Availability comes straight from each course's booking platform and can change by the second. Prices are per player where the platform reports them.
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>

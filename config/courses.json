@@ -1,0 +1,94 @@
+{
+  "timezone": "America/Vancouver",
+  "courses": [
+    {
+      "id": "furry-creek",
+      "name": "Furry Creek Golf & Country Club",
+      "city": "Furry Creek",
+      "bookingUrl": "https://www.chronogolf.com/club/furry-creek-golf-country-club",
+      "bookingWindowDays": null,
+      "notes": "Booked through Chronogolf (Lightspeed Golf). $25/player fee for no-shows or cancellations within 24h.",
+      "providers": [
+        { "type": "chronogolf", "slug": "furry-creek-golf-country-club" }
+      ]
+    },
+    {
+      "id": "northlands",
+      "name": "Northlands Golf Course",
+      "city": "North Vancouver",
+      "bookingUrl": "https://northlands.cps.golf/onlineresweb/search-teetime",
+      "bookingWindowDays": 5,
+      "notes": "Public bookings open 5 days ahead at 7:00am (online). 6-90 days ahead costs a non-refundable $10/player fee.",
+      "providers": [
+        { "type": "cps", "site": "northlands", "courseIds": "1", "classCode": "R", "memberStoreId": "1", "siteId": "1" }
+      ]
+    },
+    {
+      "id": "northview",
+      "name": "Northview Golf & Country Club",
+      "city": "Surrey",
+      "bookingUrl": "https://www.chronogolf.com/club/northview-golf-country-club",
+      "bookingWindowDays": null,
+      "notes": "Two 18-hole courses (Ridge and Canal). Booked through Chronogolf.",
+      "providers": [
+        { "type": "chronogolf", "slug": "northview-golf-country-club" }
+      ]
+    },
+    {
+      "id": "morgan-creek",
+      "name": "Morgan Creek Golf Course",
+      "city": "South Surrey",
+      "bookingUrl": "https://morgancreekbc.cps.golf/onlineresweb/search-teetime",
+      "bookingWindowDays": 7,
+      "notes": "Tee times released daily at 5:00am. Course site books through CPS; Chronogolf listing used as a fallback.",
+      "providers": [
+        { "type": "cps", "site": "morgancreekbc", "courseIds": "1", "classCode": "R", "memberStoreId": "1", "siteId": "1" },
+        { "type": "chronogolf", "slug": "morgan-creek-golf-club" }
+      ]
+    },
+    {
+      "id": "mayfair-lakes",
+      "name": "Mayfair Lakes Golf & Country Club",
+      "city": "Richmond",
+      "bookingUrl": "https://mayfairlakes.totaleintegrated.com/Book-a-Tee-Time",
+      "bookingWindowDays": 8,
+      "notes": "GolfBC course on Total e Integrated. Public can view 8 days ahead; account needed to book. No public JSON feed, so this app links out.",
+      "providers": [
+        { "type": "linkout", "reason": "Total e Integrated booking site has no public availability API" }
+      ]
+    },
+    {
+      "id": "redwoods",
+      "name": "The Redwoods Golf Course",
+      "city": "Langley",
+      "bookingUrl": "https://www.redwoods-golf.com/online-booking",
+      "bookingWindowDays": 10,
+      "notes": "Public can book 10 days ahead. Booking runs through the course site / Gallus Golf app; no public availability API found, so this app links out.",
+      "providers": [
+        { "type": "linkout", "reason": "Redwoods booking engine has no public availability API" }
+      ]
+    },
+    {
+      "id": "kings-links",
+      "name": "Kings Links by the Sea",
+      "city": "Delta",
+      "bookingUrl": "https://w.cps.golf/KingsLinksV3/Home/nIndex",
+      "bookingWindowDays": 7,
+      "notes": "Tee times open 7 days ahead at 8:00am. Legacy CPS v3 booking site (server-rendered).",
+      "providers": [
+        { "type": "cps_v3", "baseUrl": "https://w.cps.golf/KingsLinksV3", "courseId": "1" }
+      ]
+    },
+    {
+      "id": "fraserview",
+      "name": "Fraserview Golf Course",
+      "city": "Vancouver",
+      "bookingUrl": "https://www.chronogolf.com/club/fraserview-golf-course",
+      "bookingWindowDays": 5,
+      "notes": "City of Vancouver course. 5 days ahead from 7:00pm with no fee; 6-30 days ahead carries a booking fee. Booked through Chronogolf (also VanGolf app).",
+      "providers": [
+        { "type": "chronogolf", "slug": "fraserview-golf-course" }
+      ]
+    }
+  ]
+}
